@@ -1,0 +1,55 @@
+{
+  "name": "blazegraph-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "better-npm-run start",
+    "build": "babel src --out-dir build",
+    "dev": "better-npm-run dev"
+  },
+  "betterScripts": {
+    "start": {
+      "command": "node ./build/index.js",
+      "env": {
+        "NODE_PATH": "./build",
+        "NODE_ENV": "prod"
+      }
+    },
+    "dev": {
+      "command": "babel-watch src/index.js",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "dev"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaxoncreed/blazegraphProxy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaxoncreed/blazegraphProxy/issues"
+  },
+  "homepage": "https://github.com/jaxoncreed/blazegraphProxy#readme",
+  "dependencies": {
+    "better-npm-run": "^0.1.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "superagent": "^3.8.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-watch": "^2.0.7"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-0"
+    ]
+  }
+}
